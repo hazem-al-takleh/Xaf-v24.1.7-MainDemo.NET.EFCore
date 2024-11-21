@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <CheckEolTargetFramework>false</CheckEolTargetFramework>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Configurations>Debug;Release;EasyTest</Configurations>
+    <AssemblyName>MainDemo.Module</AssemblyName>
+    <RootNamespace>MainDemo.Module</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DefineConstants>$(DefineConstants);TRACE;DEBUG</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DefineConstants>$(DefineConstants);TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'EasyTest|AnyCPU' ">
+    <DefineConstants>$(DefineConstants);TRACE;DEBUG;EASYTEST</DefineConstants>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="DevExpress.Win.Design" Version="24.1.7" />
+    <PackageReference Include="DevExpress.ExpressApp.CodeAnalysis" Version="24.1.7" />
+    <PackageReference Include="DevExpress.ExpressApp.ConditionalAppearance" Version="24.1.7" />
+    <PackageReference Include="DevExpress.ExpressApp.AuditTrail.EFCore" Version="24.1.7" />
+    <PackageReference Include="DevExpress.ExpressApp.Objects" Version="24.1.7" />
+    <PackageReference Include="DevExpress.ExpressApp.ViewVariantsModule" Version="24.1.7" />
+    <PackageReference Include="DevExpress.ExpressApp.Validation" Version="24.1.7" />
+    <PackageReference Include="DevExpress.ExpressApp.ReportsV2" Version="24.1.7" />
+    <PackageReference Include="DevExpress.ExpressApp.PivotChart" Version="24.1.7" />
+    <PackageReference Include="DevExpress.ExpressApp.Office" Version="24.1.7" />
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessObjects\**\*.cs" />
+    <Compile Include="CodeRules\**\*.cs" />
+    <Compile Include="Controllers\**\*.cs" />
+    <Compile Include="DatabaseUpdate\**\*.cs" />
+    <Compile Include="Properties\**\*.cs" />
+    <Compile Include="Reports\**\*.cs" />
+    <Compile Include="DemoDbEngineDetectorHelper.cs" />
+    <Compile Include="ExternalAuthentication\CustomAuthenticationProvider.cs" />
+    <Compile Include="MainDemoModule.cs" />
+    <Compile Include="MainModuleExtensions.cs" />
+    <Compile Include="UseSQLAlternativeInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BusinessObjects\ReadMe.txt" />
+    <Content Include="Controllers\ReadMe.txt" />
+    <Content Include="DatabaseUpdate\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controllers\**\*.resx" />
+    <EmbeddedResource Include="DatabaseUpdate\**\*.xml" />
+    <EmbeddedResource Include="DatabaseUpdate\**\*.pdf" />
+    <EmbeddedResource Include="Reports\**\*.resx" />
+    <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
+    <EmbeddedResource Include="Model.DesignedDiffs.Localization.de.xafml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.3" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.1" />
+    <PackageReference Include="Castle.Core" Version="5.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="8.0.1" />
+    <PackageReference Include="Remote.Linq.Text.Json" Version="7.1.0" />
+    <PackageReference Include="Azure.Identity" Version="1.11.4" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.1.2" />
+    <PackageReference Include="Microsoft.Identity.Client" Version="4.61.3" />
+    <PackageReference Include="System.Formats.Asn1" Version="8.0.1" />
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+  </ItemGroup>
+</Project>
